@@ -120,8 +120,6 @@
 			</div>
 		</div>
 		
-		<div>
-			<p > ${SongController.gina} </p>
-		</div>
+		
 	</body>
 </html>
