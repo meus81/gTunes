@@ -10,6 +10,14 @@
 	<g:textField name="title" required="" value="${albumInstance?.title}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: albumInstance, field: 'artist', 'error')} required">
+	<label for="artist">
+		<g:message code="album.artist.label" default="Artist" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="artist" name="artist.id" from="${com.gtunes.Artist.list()}" optionKey="id" required="" value="${albumInstance?.artist?.id}" class="many-to-one"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: albumInstance, field: 'songs', 'error')} ">
 	<label for="songs">
 		<g:message code="album.songs.label" default="Songs" />

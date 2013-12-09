@@ -26,6 +26,8 @@
 					
 						<g:sortableColumn property="title" title="${message(code: 'album.title.label', default: 'Title')}" />
 					
+						<th><g:message code="album.artist.label" default="Artist" /></th>
+					
 					</tr>
 				</thead>
 				<tbody>
@@ -33,6 +35,8 @@
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td><g:link action="show" id="${albumInstance.id}">${fieldValue(bean: albumInstance, field: "title")}</g:link></td>
+					
+						<td>${fieldValue(bean: albumInstance, field: "artist")}</td>
 					
 					</tr>
 				</g:each>

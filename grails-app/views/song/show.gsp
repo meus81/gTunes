@@ -36,7 +36,16 @@
 				<li class="fieldcontain">
 					<span id="artist-label" class="property-label"><g:message code="song.artist.label" default="Artist" /></span>
 					
-						<span class="property-value" aria-labelledby="artist-label"><g:fieldValue bean="${songInstance}" field="artist"/></span>
+						<span class="property-value" aria-labelledby="artist-label"><g:link controller="artist" action="show" id="${songInstance?.artist?.id}">${songInstance?.artist?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${songInstance?.trackNumber}">
+				<li class="fieldcontain">
+					<span id="trackNumber-label" class="property-label"><g:message code="song.trackNumber.label" default="Track Number" /></span>
+					
+						<span class="property-value" aria-labelledby="trackNumber-label"><g:fieldValue bean="${songInstance}" field="trackNumber"/></span>
 					
 				</li>
 				</g:if>
@@ -46,6 +55,15 @@
 					<span id="album-label" class="property-label"><g:message code="song.album.label" default="Album" /></span>
 					
 						<span class="property-value" aria-labelledby="album-label"><g:link controller="album" action="show" id="${songInstance?.album?.id}">${songInstance?.album?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${songInstance?.duration}">
+				<li class="fieldcontain">
+					<span id="duration-label" class="property-label"><g:message code="song.duration.label" default="Duration" /></span>
+					
+						<span class="property-value" aria-labelledby="duration-label"><g:fieldValue bean="${songInstance}" field="duration"/></span>
 					
 				</li>
 				</g:if>

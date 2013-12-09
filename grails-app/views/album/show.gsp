@@ -32,6 +32,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${albumInstance?.artist}">
+				<li class="fieldcontain">
+					<span id="artist-label" class="property-label"><g:message code="album.artist.label" default="Artist" /></span>
+					
+						<span class="property-value" aria-labelledby="artist-label"><g:link controller="artist" action="show" id="${albumInstance?.artist?.id}">${albumInstance?.artist?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${albumInstance?.songs}">
 				<li class="fieldcontain">
 					<span id="songs-label" class="property-label"><g:message code="album.songs.label" default="Songs" /></span>

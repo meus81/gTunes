@@ -12,10 +12,30 @@ hibernate {
 // environment specific settings
 environments {
     development {
-        dataSource {
+        /*
+		dataSource {
             dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
         }
+        */
+		dataSource {
+			dbCreate = "update"
+			url = "jdbc:mysql://localhost/gTunes"
+			driverClassName = "com.mysql.jdbc.Driver"
+			username = "root"
+			password = "root"
+			pooled = true
+			properties {
+				maxActive = -1
+				minEvictableIdleTimeMillis=1800000
+				timeBetweenEvictionRunsMillis=1800000
+				numTestsPerEvictionRun=3
+				testOnBorrow=true
+				testWhileIdle=true
+				testOnReturn=true
+				validationQuery="SELECT 1"
+			}
+		}
     }
     test {
         dataSource {
@@ -29,7 +49,7 @@ environments {
 			url = "jdbc:mysql://localhost/gTunes"
 			driverClassName = "com.mysql.jdbc.Driver"
 			username = "root"
-			password = ""
+			password = "root"
 			pooled = true
 			properties {
 				maxActive = -1

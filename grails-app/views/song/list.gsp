@@ -26,9 +26,13 @@
 					
 						<g:sortableColumn property="title" title="${message(code: 'song.title.label', default: 'Title')}" />
 					
-						<g:sortableColumn property="artist" title="${message(code: 'song.artist.label', default: 'Artist')}" />
+						<th><g:message code="song.artist.label" default="Artist" /></th>
+					
+						<g:sortableColumn property="trackNumber" title="${message(code: 'song.trackNumber.label', default: 'Track Number')}" />
 					
 						<th><g:message code="song.album.label" default="Album" /></th>
+					
+						<g:sortableColumn property="duration" title="${message(code: 'song.duration.label', default: 'Duration')}" />
 					
 					</tr>
 				</thead>
@@ -40,7 +44,11 @@
 					
 						<td>${fieldValue(bean: songInstance, field: "artist")}</td>
 					
+						<td>${fieldValue(bean: songInstance, field: "trackNumber")}</td>
+					
 						<td>${fieldValue(bean: songInstance, field: "album")}</td>
+					
+						<td>${fieldValue(bean: songInstance, field: "duration")}</td>
 					
 					</tr>
 				</g:each>
